@@ -6,11 +6,8 @@
     </x-slot>
 
 
-    <h1 class="font-bold text-4xl">This is a Homepage</h1>
-
-
-    <div class="mt-4">
-        <p>This is the homepage for the reminder doc app</p>
+    <div class="mt-4 font-bold">
+        <p>This is an app where you can save information such as driving licenses and certificates that will expire in the far future</p>
     </div>
 
 
