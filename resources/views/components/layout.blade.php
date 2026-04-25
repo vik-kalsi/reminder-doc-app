@@ -27,14 +27,13 @@
         
             <div x-show="open" class="lg:hidden">
                 <ul class="z-10 grid justify-items-center space-y-8 py-5 font-bold text-2xl border-4 border-white bg-[#171323] min-w-full h-64 md:text-4xl md:h-80 absolute left-0">
+                    <li class="cursor-pointer"><a @click="open = ! open" href="/">Homepage</a></li>
                     <li class="cursor-pointer"><a @click="open = ! open" href="/login">Login</a></li>
                     <li class="cursor-pointer"><a @click="open = ! open" href="/register">Register</a></li>
                 </ul>
             </div>
-        
+
         </div>
-
-
 
     </div>
     
