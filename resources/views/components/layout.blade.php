@@ -18,7 +18,7 @@
     
     <div class="flex justify-between mt-4 mx-4">
         <div>
-            <p class="font-bold">Reminder-Doc-App</p>
+            <p class="font-bold"><a href="/">Reminder-Doc-App</a></p>
         </div>
 
 
