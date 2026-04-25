@@ -14,7 +14,7 @@
 
 
 
-<body class="grid justify-center bg-[#171323] text-white">
+<body class="justify-center bg-[#171323] text-white">
     
     <div class="flex justify-between mt-4 mx-4">
         <div>
