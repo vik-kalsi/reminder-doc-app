@@ -26,6 +26,11 @@
                 <p>{{ session('LogOutSuccess') }}</p>
             @endif
 
+
+            @if (session('AccountDeletedSuccess'))
+                <p>{{ session('AccountDeletedSuccess') }}</p>
+            @endif
+
             <input class="border-2 p-1" type="email" name="email" placeholder="Email Address" value="{{ old('email') }}">
             <input class="border-2 p-1" type="password" name="password" placeholder="Password">
             <button class="border-2 p-1 cursor-pointer font-bold" type="submit">Login</button>
