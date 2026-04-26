@@ -22,3 +22,5 @@ Route::get('/login', [LoginController::class, 'OpenLoginPage'])
 #Register page
 Route::get('/register', [RegisterController::class, "OpenRegistrationPage"])
 ->middleware('guest');
+
+Route::post('/register', [RegisterController::class, "RegisterUser"]);
