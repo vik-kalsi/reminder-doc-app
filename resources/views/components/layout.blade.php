@@ -36,6 +36,13 @@
 
                     @if(auth()->user())
                         <li class="px-2"><a class="hover:font-bold" href="/deleteaccount">Delete Account</a></li>
+
+                        <div>
+                            <form action="{{ route('logout_user') }}" method="post">
+                                @csrf
+                                <button class="cursor-pointer px-2 hover:font-bold" type="submit">Logout</button>
+                            </form>
+                        </div>
                     @endif
                 </ul>
             </div>
