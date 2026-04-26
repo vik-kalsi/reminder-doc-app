@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DeleteAccountController;
 
 
 
@@ -38,4 +39,13 @@ Route::post('/register', [RegisterController::class, "RegisterUser"]);
 
 #Dashboard page
 Route::get('/dashboard', [DashboardController::class, "OpenDashboard"])
+->middleware('auth');
+
+
+#Delete user account
+Route::get('/deleteaccount', [DeleteAccountController::class, "OpenDeleteAccountPage"])
+->middleware('auth');
+
+
+Route::delete('/deleteaccount/{id}', [DeleteAccountController::class, "DeleteAccount"])->name('account.delete')
 ->middleware('auth');
