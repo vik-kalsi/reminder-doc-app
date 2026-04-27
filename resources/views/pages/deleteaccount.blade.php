@@ -6,7 +6,7 @@
     </x-slot>
 
 
-    <div class="grid justify-center mt-4 font-bold">
+    <div class="grid justify-center mt-2 font-bold">
 
         <h1 class="font-bold text-4xl">Delete Account Page</h1>
 
