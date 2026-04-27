@@ -7,6 +7,7 @@ use App\Http\Controllers\LogOutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeleteAccountController;
+use App\Http\Controllers\DocumentsController;
 
 
 
@@ -48,4 +49,9 @@ Route::get('/deleteaccount', [DeleteAccountController::class, "OpenDeleteAccount
 
 
 Route::delete('/deleteaccount/{id}', [DeleteAccountController::class, "DeleteAccount"])->name('account.delete')
+->middleware('auth');
+
+
+#Documents
+Route::get('/adddocuments', [DocumentsController::class, "OpenAddDocumentsPage"])
 ->middleware('auth');
