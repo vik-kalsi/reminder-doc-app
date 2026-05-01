@@ -55,3 +55,6 @@ Route::delete('/deleteaccount/{id}', [DeleteAccountController::class, "DeleteAcc
 #Documents
 Route::get('/adddocuments', [DocumentsController::class, "OpenAddDocumentsPage"])
 ->middleware('auth');
+
+Route::post('/adddocuments', [DocumentsController::class, "AddDocumentToDB"])
+->middleware('auth');

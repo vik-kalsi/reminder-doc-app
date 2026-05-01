@@ -10,4 +10,14 @@ class DocumentsController extends Controller
     {
         return view('pages.adddocuments');
     }
+
+
+    public function AddDocumentToDB()
+    {
+        $answer = "hi";    
+
+        return  $answer;
+    }
+
+
 }
