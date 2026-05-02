@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Document;
+use App\Models\User;
+
+
 class DocumentsController extends Controller
 {
     public function OpenAddDocumentsPage()
@@ -12,11 +16,21 @@ class DocumentsController extends Controller
     }
 
 
-    public function AddDocumentToDB()
+    public function AddDocumentToDB(Request $request)
     {
-        $answer = "hi";    
+        $validated = $request->validate([
+            'document' => 'required',
+            'expiry_date' => 'required',
+        ]);
+        
+        
+        $document = new Document(['name' => $request->document, 'expiry_date'=> $request->expiry_date, 'reminder_days'=> 30]);
+        $user = User::find(auth()->user()->id);
 
-        return  $answer;
+        $user->documents()->save($document);
+
+
+        return "Document Added";
     }
 
 
