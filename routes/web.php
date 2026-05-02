@@ -58,3 +58,6 @@ Route::get('/adddocuments', [DocumentsController::class, "OpenAddDocumentsPage"]
 
 Route::post('/adddocuments', [DocumentsController::class, "AddDocumentToDB"])
 ->middleware('auth');
+
+Route::get('/documentslist', [DocumentsController::class, "OpenDocumentsListsPage"])
+->middleware('auth');
