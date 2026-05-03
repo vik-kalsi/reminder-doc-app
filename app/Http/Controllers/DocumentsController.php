@@ -52,6 +52,7 @@ class DocumentsController extends Controller
     }
 
 
+
     public function OpenDocumentToEdit($id)
     {
         $documentContent = Document::findOrFail($id);
@@ -66,6 +67,26 @@ class DocumentsController extends Controller
         }
 
     }
+
+
+
+    public function EditingDocumentSubmission(Request $request, $id)
+    {
+        $request->validate([
+            'documentName' => 'required',
+            'expiry_date' => 'required',
+        ]);
+
+        $documentContent = Document::findOrFail($id);
+
+        $documentContent->name = $request->input('documentName');
+        $documentContent->expiry_date = $request->input('expiry_date');
+        $documentContent->save();
+        
+        return redirect()->action([DocumentsController::class, "OpenDocumentsListsPage"])
+        ->with('documentEditSuccess', 'Document has been edited succesfully');
+    }
+
 
 
 }

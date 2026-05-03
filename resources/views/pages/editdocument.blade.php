@@ -9,7 +9,7 @@
 
 
     <div class="mt-4">
-        <form action="" method="post">
+        <form action="{{ route('update_document_submission', $documentToEdit->id) }}" method="post">
             @csrf
             @method('PUT')
 
@@ -20,7 +20,7 @@
 
             <div class="grid border-2 p-2 w-85">
                 <label>Edit Document Name</label>
-                <input class="border-2 p-1 w-[320px]" type="text" name="document" value="{{ $documentToEdit->name }}">
+                <input class="border-2 p-1 w-[320px]" type="text" name="documentName" value="{{ $documentToEdit->name }}">
 
                 <label class="mt-4">Edit Expiry Date</label>
                 <input class="border-2 p-1 w-[320px]" type="date" name="expiry_date" value="{{ $documentToEdit->expiry_date }}">

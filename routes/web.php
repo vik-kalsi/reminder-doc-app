@@ -62,12 +62,13 @@ Route::post('/adddocuments', [DocumentsController::class, "AddDocumentToDB"])
 Route::get('/documentslist', [DocumentsController::class, "OpenDocumentsListsPage"])
 ->middleware('auth');
 
+Route::delete('/documentslist/{id}', [DocumentsController::class, "DeleteSelectedDocument"]) ->name('documents.destroy')
+->middleware('auth');
+
 Route::get('/documentslist/{id}', [DocumentsController::class, "OpenDocumentToEdit"])
 ->name('documentopen.edit')
 ->middleware('auth');
 
 //Edit Function to be added here
-
-
-Route::delete('/documentslist/{id}', [DocumentsController::class, "DeleteSelectedDocument"]) ->name('documents.destroy')
+Route::put('/documentslist/{id}', [DocumentsController::class, "EditingDocumentSubmission"]) ->name('update_document_submission')
 ->middleware('auth');
