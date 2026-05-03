@@ -18,12 +18,12 @@
     
     <div class="flex justify-between mt-4 mx-4">
         <div>
-            <p class="font-bold"><a href="/">Reminder-Doc-App</a></p>
+            <p class="font-bold md:text-4xl"><a href="/">Reminder-Doc-App</a></p>
         </div>
 
 
         <div x-data="{ open: false }" x-cloak class="lg:hidden">
-            <svg @click="open = ! open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6"> <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" /></svg>
+            <svg @click="open = ! open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 md:size-14 cursor-pointer"> <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" /></svg>
         
             <div x-show="open" class="lg:hidden">
                 <ul class="z-10 grid justify-items-center space-y-2 py-5 font-bold text-2xl border-4 border-white bg-[#171323] min-w-full h-64 md:text-4xl md:h-80 absolute left-0">                    
@@ -49,9 +49,34 @@
                     @endif
                 </ul>
             </div>
-
         </div>
 
+        
+
+        <div class="hidden lg:block">
+            <ul class="flex gap-6 font-bold text-3xl">
+                @if(!auth()->user())
+                    <li><a href="/">Homepage</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                @endif
+
+
+                @if(auth()->user())
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/documentslist">Documents List</a></li>
+                    <li><a href="/adddocuments">Add Documents</a></li>
+                    <li><a href="/deleteaccount">Delete Account</a></li>
+
+                    <div>
+                        <form action="{{ route('logout_user') }}" method="post">
+                            @csrf
+                            <button class="cursor-pointer px-2 hover:font-bold" type="submit">Logout</button>
+                        </form>
+                    </div>
+                @endif
+            </ul>
+        </div>
     </div>
     
 
