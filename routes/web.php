@@ -69,6 +69,5 @@ Route::get('/documentslist/{id}', [DocumentsController::class, "OpenDocumentToEd
 ->name('documentopen.edit')
 ->middleware('auth');
 
-//Edit Function to be added here
 Route::put('/documentslist/{id}', [DocumentsController::class, "EditingDocumentSubmission"]) ->name('update_document_submission')
 ->middleware('auth');
