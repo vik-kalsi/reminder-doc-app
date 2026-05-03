@@ -41,4 +41,15 @@ class DocumentsController extends Controller
     }
 
 
+
+    public function DeleteSelectedDocument($id)
+    {
+        $document = Document::findOrFail($id);
+        $document->delete();
+
+        return redirect()->action([DocumentsController::class, "OpenDocumentsListsPage"])
+        ->with('documentDeletedSuccess', 'Document has been deleted succesfully');
+    }
+
+
 }

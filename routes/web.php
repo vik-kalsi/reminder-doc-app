@@ -61,3 +61,6 @@ Route::post('/adddocuments', [DocumentsController::class, "AddDocumentToDB"])
 
 Route::get('/documentslist', [DocumentsController::class, "OpenDocumentsListsPage"])
 ->middleware('auth');
+
+Route::delete('/documentslist/{id}', [DocumentsController::class, "DeleteSelectedDocument"]) ->name('documents.destroy')
+->middleware('auth');

@@ -12,6 +12,10 @@
         <p class="mb-6">{{ session('documentAdded') }}</p>
     @endif
 
+    @if (session('documentDeletedSuccess'))
+        <p class="mb-6">{{ session('documentDeletedSuccess') }}</p>
+    @endif
+
     <div class="mt-4">
         @foreach ($documents as $document)
             <ul class="grid justify-center">
@@ -29,7 +33,7 @@
                         </form>
 
 
-                        <form action="" method="post">
+                        <form action="{{ route('documents.destroy', $document->id) }}" method="post">
                             @csrf
                             @method('DELETE')
 
@@ -39,7 +43,6 @@
                 </li>
             </ul>
         @endforeach
-
     </div>
 
 
