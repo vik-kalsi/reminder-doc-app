@@ -52,4 +52,20 @@ class DocumentsController extends Controller
     }
 
 
+    public function OpenDocumentToEdit($id)
+    {
+        $documentContent = Document::findOrFail($id);
+        $userID = auth()->id();
+
+        if ($documentContent->user_id === $userID) {
+            return view('pages.editdocument', ["documentToEdit" => $documentContent]);
+        }
+
+        else {
+            return redirect()->action([DocumentsController::class, "OpenDocumentsListsPage"]);
+        }
+
+    }
+
+
 }

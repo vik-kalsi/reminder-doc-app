@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="flex gap-x-3">
-                        <form action="" method="get">
+                        <form action="{{ route('documentopen.edit', $document->id) }}" method="get">
                             @csrf
 
                             <button class="mt-6 border-2 p-1 cursor-pointer hover:bg-blue-700" type="submit">Edit Document</button>
