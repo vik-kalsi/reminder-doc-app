@@ -16,6 +16,10 @@
         <p class="mb-6">{{ session('documentDeletedSuccess') }}</p>
     @endif
 
+    @if (session('documentEditSuccess'))
+        <p class="mb-6">{{ session('documentEditSuccess') }}</p>
+    @endif
+
     <div class="mt-4">
         @foreach ($documents as $document)
             <ul class="grid justify-center">

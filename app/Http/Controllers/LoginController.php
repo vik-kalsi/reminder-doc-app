@@ -27,7 +27,6 @@ class LoginController extends Controller
         if (Auth::attempt($validated))
             {
                 $request->session()->regenerate();
-                //return redirect()->action([NotesController::class, 'OpenViewNotesPage']);
                 return redirect()->action([DashboardController::class, 'OpenDashboard']);
             }
             else
