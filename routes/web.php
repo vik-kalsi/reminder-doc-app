@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeleteAccountController;
 use App\Http\Controllers\DocumentsController;
+use App\Http\Controllers\ExpiringDocumentsController;
 
 
 
@@ -70,4 +71,9 @@ Route::get('/documentslist/{id}', [DocumentsController::class, "OpenDocumentToEd
 ->middleware('auth');
 
 Route::put('/documentslist/{id}', [DocumentsController::class, "EditingDocumentSubmission"]) ->name('update_document_submission')
+->middleware('auth');
+
+
+#Expiring Documents
+Route::get('/expiringdocuments', [ExpiringDocumentsController::class, "OpenExpiringDocumentPage"])
 ->middleware('auth');

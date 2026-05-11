@@ -26,7 +26,7 @@
             <svg @click="open = ! open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 md:size-14 cursor-pointer"> <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" /></svg>
         
             <div x-show="open" class="lg:hidden">
-                <ul class="z-10 grid justify-items-center space-y-2 py-5 font-bold text-2xl border-4 border-white bg-[#171323] min-w-full h-64 md:text-4xl md:h-80 absolute left-0">                    
+                <ul class="z-10 grid justify-items-center space-y-2 py-5 font-bold text-2xl border-4 border-white bg-[#171323] min-w-full h-68 md:text-4xl md:h-80 absolute left-0">                    
                     @if(!auth()->user())
                         <li class="cursor-pointer"><a @click="open = ! open" href="/">Homepage</a></li>
                         <li class="cursor-pointer"><a @click="open = ! open" href="/login">Login</a></li>
@@ -38,6 +38,7 @@
                         <li class="px-2"><a class="hover:font-bold" href="/dashboard">Dashboard</a></li>
                         <li class="px-2"><a class="hover:font-bold" href="/documentslist">Documents List</a></li>
                         <li class="px-2"><a class="hover:font-bold" href="/adddocuments">Add Documents</a></li>
+                        <li class="px-2"><a href="/expiringdocuments">Expiring Documents</a></li>
                         <li class="px-2"><a class="hover:font-bold" href="/deleteaccount">Delete Account</a></li>
 
                         <div>
@@ -54,7 +55,7 @@
         
 
         <div class="hidden lg:block">
-            <ul class="flex gap-6 font-bold text-3xl">
+            <ul class="flex gap-6 font-bold text-2xl border-2 p-1">
                 @if(!auth()->user())
                     <li><a href="/">Homepage</a></li>
                     <li><a href="/login">Login</a></li>
@@ -66,6 +67,7 @@
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/documentslist">Documents List</a></li>
                     <li><a href="/adddocuments">Add Documents</a></li>
+                    <li><a href="/expiringdocuments">Expiring Documents</a></li>
                     <li><a href="/deleteaccount">Delete Account</a></li>
 
                     <div>
