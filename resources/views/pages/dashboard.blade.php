@@ -10,7 +10,12 @@
 
         <div class="grid justify-center border-2 w-85 mt-6 py-3">
         
-            <h1 class="font-bold">Welcome: {{ auth()->user()->name }} </h1>            
+            <h1 class="font-bold">Welcome: {{ auth()->user()->name }} </h1>
+            
+            <ul class="grid gap-3 my-3">
+                <li class="px-2 underline underline-offset-2"><a class="hover:font-bold" href="/documentslist">Click to view Documents List</a></li>
+                <li class="px-2 underline underline-offset-2"><a href="/expiringdocuments">Click to view Expiring Documents</a></li>
+            </ul>
 
         </div>
 
