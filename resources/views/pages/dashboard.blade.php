@@ -14,7 +14,7 @@
             
             <ul class="grid gap-3 my-3">
                 <li class="px-2 underline underline-offset-2 md:text-4xl"><a class="hover:font-bold" href="/documentslist">Click to view Documents List</a></li>
-                <li class="px-2 underline underline-offset-2 md:text-4xl"><a href="/expiringdocuments">Click to view Expiring Documents</a></li>
+                <li class="px-2 underline underline-offset-2 md:text-4xl"><a class="hover:font-bold" href="/expiringdocuments">Click to view Expiring Documents</a></li>
             </ul>
 
         </div>

@@ -6,7 +6,7 @@
     </x-slot>
 
 
-    <div class="mt-4 font-bold md:text-4xl md:w-2xl md:mx-14">
+    <div class="grid justify-center mt-4 font-bold md:text-4xl md:w-2xl md:mx-14 lg:w-7xl">
         <p>This is an app where you can save information such as driving licenses and certificates that will expire in the future</p>
     </div>
 
